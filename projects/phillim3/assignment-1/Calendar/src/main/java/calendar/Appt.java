@@ -90,8 +90,8 @@ public class Appt implements  Comparable<Appt>{
         //Sets all instance variables 
     	this.startHour = startHour;
     	this.startMinute = startMinute; 
-    	this.startDay = startDay; 
-    	this.startMonth = startMonth;
+    	this.startDay = startMonth; 
+    	this.startMonth = startDay;
     	this.startYear = startYear; 
         setTitle(title);
         setDescription(description);
@@ -110,7 +110,7 @@ public class Appt implements  Comparable<Appt>{
      * @sets valid to true if the appointment is valid
      */
     private void isValid() {
-    	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
+    	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth);
     				
     	if(startHour<0 || startHour>23)
     		this.valid=false;
