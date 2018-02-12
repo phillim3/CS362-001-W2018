@@ -93,9 +93,9 @@ public class TimeTableTest {
 		LinkedList<CalDay> calDays = new LinkedList<CalDay>();
 		GregorianCalendar longTimeAgo = new GregorianCalendar(1, 1, 1);
 		timeTable.getApptRange(listAppts, longTimeAgo, tomorrow);
-		//timeTable.getApptRange(listAppts, tomorrow, longTimeAgo);
+		timeTable.getApptRange(listAppts, tomorrow, longTimeAgo);
 		timeTable.deleteAppt(listAppts, appt);
-		//LinkedList<Appt> listDeletedAppts = timeTable.deleteAppt(listAppts, listAppts.get(2));
+		LinkedList<Appt> listDeletedAppts = timeTable.deleteAppt(listAppts, listAppts.get(2));
 		assertEquals(null, listDeletedAppts);
 		int[] uhg = { 2, 0, 1, 3 };
 		timeTable.permute(listAppts, uhg);
