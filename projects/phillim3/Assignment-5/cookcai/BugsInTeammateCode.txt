@@ -1,0 +1,6 @@
+First bug: Appt.java, line 115
+Upper bounds on start hour too high.
+
+Second bug: TimeTable.java, line 53
+Conditional statement of for loop causes out-of-bounds error
+
