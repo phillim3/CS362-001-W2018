@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: finalprojectB.UrlValidatorTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.105 sec <<< FAILURE!
-testYourFirstPartition(finalprojectB.UrlValidatorTest)  Time elapsed: 0.031 sec  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.18 sec <<< FAILURE!
+testYourFirstPartition(finalprojectB.UrlValidatorTest)  Time elapsed: 0.047 sec  <<< ERROR!
 java.lang.ExceptionInInitializerError
 	at finalprojectB.UrlValidator.isValidAuthority(UrlValidator.java:390)
 	at finalprojectB.UrlValidator.isValid(UrlValidator.java:324)
-	at finalprojectB.UrlValidatorTest.testYourFirstPartition(UrlValidatorTest.java:39)
+	at finalprojectB.UrlValidatorTest.testYourFirstPartition(UrlValidatorTest.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -36,7 +36,7 @@ Caused by: java.lang.IllegalArgumentException: Regular expressions are missing
 	at finalprojectB.RegexValidator.<init>(RegexValidator.java:121)
 	at finalprojectB.RegexValidator.<init>(RegexValidator.java:96)
 	at finalprojectB.RegexValidator.<init>(RegexValidator.java:83)
-	at finalprojectB.DomainValidator.<init>(DomainValidator.java:108)
+	at finalprojectB.DomainValidator.<init>(DomainValidator.java:107)
 	at finalprojectB.DomainValidator.<clinit>(DomainValidator.java:96)
 	... 28 more
 

@@ -33,7 +33,7 @@ public class UrlValidatorTest extends TestCase {
         //assertTrue(urlVal.isValid("https://www.google.com")); //tests https part, returns false
         //assertTrue(urlVal.isValid("htatp://www.google.com")); //tests http part, error, found bug in regex-line 110
         //assertTrue(urlVal.isValid("jimmy://www.google.com")); //tests invalid scheme, returns true instead of false
-        //assertTrue(urlVal.isValid("file://host/path")); error. found bug-line 315. does not recongize valid "file" scheme
+        assertTrue(urlVal.isValid("file://host/path")); //error. found bug-line 315. does not recongize valid "file" scheme
 
         //authorities
         //assertTrue(urlVal.isValid("http:///www.google.com")); //tests :// part, returns true instead of false
@@ -52,7 +52,7 @@ public class UrlValidatorTest extends TestCase {
     }
     //You need to create more test cases for your Partitions if you need to 
 
-    public void testIsValid() {
+   /* public void testIsValid() {
         //You can use this function for programming based testing
         UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
         String[] scheme = { "http", "https", "file", "jimmy" };
@@ -86,5 +86,5 @@ public class UrlValidatorTest extends TestCase {
             }
         }
     }
-
+*/
 }
