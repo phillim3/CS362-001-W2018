@@ -29,13 +29,18 @@ public class UrlValidatorTest extends TestCase {
         //assertTrue(urlVal.isValid("http://www.google.com")); //tests vaild url, pass
 
         //these test should return false, but often return true. i constructed these tests opposite of normal because it enabled me to see what was working correctly when most of the code was not working correctly.
+        //schemes
         //assertTrue(urlVal.isValid("https://www.google.com")); //tests https part, returns false
         //assertTrue(urlVal.isValid("htatp://www.google.com")); //tests http part, error, found bug in regex-line 110
+        //assertTrue(urlVal.isValid("jimmy://www.google.com")); //tests invalid scheme, returns true instead of false
+        //assertTrue(urlVal.isValid("file://host/path")); error. found bug-line 315. does not recongize valid "file" scheme
+
+        //authorities
         //assertTrue(urlVal.isValid("http:///www.google.com")); //tests :// part, returns true instead of false
         //assertFalse(urlVal.isValid("http///www.google.com")); //tests :// part, works correctly
         //assertTrue(urlVal.isValid("http:///www.!@#$%^&&*(.com")); //tests domain part, returns true instead of false
-        //assertTrue(urlVal.isValid("jimmy://www.google.com")); //tests invalid scheme, returns true instead of false
-        //assertTrue(urlVal.isValid("file://host/path")); error. found bug-line 315. does not recongize valid "file" scheme
+
+        //cheeseburgers
         //assertTrue(urlVal.isValid("cheeseburger")); //because
 
     }
@@ -67,8 +72,7 @@ public class UrlValidatorTest extends TestCase {
         for (int i = 0; i < 3; i++) {
             if (i != 2) {
                 assertFalse(urlVal.isValid(scheme2[i] + "://" + authority[0]));
-            }
-            else{
+            } else {
                 assertFalse(urlVal.isValid(scheme2[i] + "://" + authority[1]));
             }
         }
@@ -77,8 +81,7 @@ public class UrlValidatorTest extends TestCase {
         for (int i = 0; i < 3; i++) {
             if (i != 2) {
                 assertFalse(urlVal.isValid(scheme[i] + "://" + authority2[0]));
-            }
-            else{
+            } else {
                 assertFalse(urlVal.isValid(scheme[i] + "://" + authority2[1]));
             }
         }
