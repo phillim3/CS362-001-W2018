@@ -20,6 +20,7 @@ public class UrlValidatorTest extends TestCase {
         //assertTrue(urlVal.isValid("http://www.google.com")); //works
         //assertTrue(urlVal.isValid("http://wwaw.google.com")); //doesn't work. should return false
         //assertFalse(urlVal.isValid("http://www.google.jom"));
+        //assertTrue(urlVal.isValid("htatp://www.google.com")); // error
     }
 
     public void testYourFirstPartition() {
@@ -27,21 +28,15 @@ public class UrlValidatorTest extends TestCase {
         UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
         //assertTrue(urlVal.isValid("http://www.google.com")); //tests vaild url, pass
 
-        //these test should return false, but return true. i constructed these tests opposite of normal because it enabled me to see what was working correctly when most of the code was not working correctly.
-        //assertTrue(urlVal.isValid("https://www.google.com")); //tests https part, fails
+        //these test should return false, but often return true. i constructed these tests opposite of normal because it enabled me to see what was working correctly when most of the code was not working correctly.
+        //assertTrue(urlVal.isValid("https://www.google.com")); //tests https part, returns false
         //assertTrue(urlVal.isValid("htatp://www.google.com")); //tests http part, error, found bug in regex-line 110
-        //assertTrue(urlVal.isValid("http:///www.google.com")); //tests :// part, fails
-        //assertTrue(urlVal.isValid("http///www.google.com")); //tests :// part, works
-        //assertTrue(urlVal.isValid("http://wwww.google.com")); //tests www part, fails
-        //assertTrue(urlVal.isValid("http:///www/google.com")); //tests first . part, passes
-        //assertTrue(urlVal.isValid("http:///www?google.com")); //tests first . part, fails
-        //assertTrue(urlVal.isValid("http:///www.!@#$%^&&*(.com")); //tests domain part, fails
-        //assertTrue(urlVal.isValid("http:///www.google?com")); //tests second . part, fails
-        //assertTrue(urlVal.isValid("http:///www.google.ccom")); //tests com part, fails
-        //assertTrue(urlVal.isValid("jimmy://www.google.com"));
+        //assertTrue(urlVal.isValid("http:///www.google.com")); //tests :// part, returns true instead of false
+        //assertFalse(urlVal.isValid("http///www.google.com")); //tests :// part, works correctly
+        //assertTrue(urlVal.isValid("http:///www.!@#$%^&&*(.com")); //tests domain part, returns true instead of false
+        //assertTrue(urlVal.isValid("jimmy://www.google.com")); //tests invalid scheme, returns true instead of false
         //assertTrue(urlVal.isValid("file://host/path")); error. found bug-line 315. does not recongize valid "file" scheme
         //assertTrue(urlVal.isValid("cheeseburger")); //because
-        //results of testing urlMatcher:
 
     }
 
